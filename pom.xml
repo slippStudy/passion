@@ -101,6 +101,17 @@
                     </includes>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>2.9</version>
+                <configuration>
+                    <wtpversion>2.0</wtpversion>
+                    <jeeversion>1.4</jeeversion>
+                    <wtpContextName>/</wtpContextName>
+                    <downloadSources>true</downloadSources>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>
