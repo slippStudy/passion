@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Hello World!
-tagline: Supporting tagline
+tagline: java study slipp
 ---
 {% include JB/setup %}
 
