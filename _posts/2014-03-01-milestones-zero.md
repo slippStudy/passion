@@ -10,11 +10,10 @@ tags: ["개발환경"]
 [#22](https://github.com/slippStudy/passion/issues/22)
 
 ## require environment
-
 ## download source in github 
 
 
-{% highlight bash %} $ gem install jekyll {% endhighlight %}
+{% highlight bash %} $git clone  https://github.com/slippStudy/passion.git $cd passion$git status {% endhighlight %}
 
 
 ## install lombok 
