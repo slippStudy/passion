@@ -13,13 +13,8 @@ tags: ["개발환경"]
 
 ## download source in github 
 
-“`
-git clone ddfd
-
-“`
 
 {% highlight bash %} $ gem install jekyll {% endhighlight %}
-
 
 
 ## install lombok 
