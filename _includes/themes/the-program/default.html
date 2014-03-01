@@ -20,7 +20,7 @@
 			<div class="unit-inner unit-head-inner">
 				<nav class="nav-global">
 					<ul>
-						<li class="logo"><a href="{{BASE_PATH}}">{{ site.title }}{% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}</a></li>
+						<li class="logo"><a href="{{BASE_PATH}}">{{ site.title }}</a></li>
 						{% assign pages_list = site.pages %}
             			{% assign group = 'navigation' %}
             			{% include JB/pages_list %}
@@ -37,7 +37,20 @@
 				<div class="entry-content">
 				<article class="unit-article layout-{{layout}}">
 					<div class="unit-inner unit-article-inner">
-						<div class="content">					
+						<div class="content">
+							<header>
+								<div class="unit-head">
+									<div class="unit-inner unit-head-inner">
+										<h1 class="h2 entry-title">Sustainable Life, Programming, Programmer</h1>
+									</div><!-- unit-inner -->
+								</div><!-- unit-head -->
+																
+								<div class="unit-head">
+									<div class="unit-inner unit-head-inner">
+										<h1 class="h2 entry-title">{{ page.title }}</h1>
+									</div><!-- unit-inner -->
+								</div><!-- unit-head -->
+							</header>											
 							{{ content }}
 						</div><!-- content -->
 					</div><!-- unit-inner -->
