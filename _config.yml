@@ -9,13 +9,16 @@ auto: true
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : Slipp
+title : slipp passions
 tagline: java study slipp
 author :
-  name : 지속적인 삶, 프로그래밍, 그리고 프로그래머 들
+  name : 지속적인 삶, 프로그래밍, 그리고 프로그래머들
   email : slipp-passion@gmail.com
+  qna : http://www.slipp.net/
+  wiki : http://www.slipp.net/wiki/dashboard.action
   github : slippStudy
   facebook : https://www.facebook.com/groups/slipp
+
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 

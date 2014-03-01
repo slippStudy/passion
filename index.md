@@ -4,7 +4,7 @@ tagline: java study slipp
 ---
 {% include JB/setup %}
 
-## New Posts
+## 개발하면서..
 
 <ul class="posts">
   {% for post in site.posts %}
