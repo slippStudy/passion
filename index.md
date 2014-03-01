@@ -4,9 +4,7 @@ tagline: java study slipp
 ---
 {% include JB/setup %}
 
-## Update Author Attributes
-
-## Posts
+## New Posts
 
 <ul class="posts">
   {% for post in site.posts %}
