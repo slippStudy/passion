@@ -7,26 +7,27 @@ tags: ["개발환경"]
 ---
 {% include JB/setup %}
 
+### Issue 
 [#22](https://github.com/slippStudy/passion/issues/22)
 
-## require environment
+### Requirements
 
-## download source in github 
+### Download source in github 
 {% highlight bash %} $ git clone  https://github.com/slippStudy/passion.git
 $ cd passion
 $ git status {% endhighlight %}
 
 
-## install lombok 
+### Install lombok 
 {% highlight bash %} $ java -jar lombok.jar {% endhighlight %}
 
-## generate eclipse project
+### Generate eclipse project
 {% highlight bash %} $ mvn eclipse:clean eclipse:eclipse {% endhighlight %}
 
-## import project 
+### Import project 
 
-## run project
+### run project
 
 
-## before push
+### before push
 {% highlight bash %} $ mvn test {% endhighlight %}
