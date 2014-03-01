@@ -18,6 +18,8 @@ git clone ddfd
 
 “`
 
+{% highlight bash %} $ gem install jekyll {% endhighlight %}
+
 
 
 ## install lombok 
