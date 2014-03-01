@@ -3,7 +3,7 @@ layout: post
 title: "로컬 개발환경 설정"
 description: ""
 category: milestones zero
-tags: ["개발환경"]
+tags: [개발환경 lombok eclipse mvn]
 ---
 {% include JB/setup %}
 
@@ -19,23 +19,26 @@ tags: ["개발환경"]
 - [tomcat 7](http://tomcat.apache.org/download-70.cgi)
 - [eclipse](https://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/keplersr2)
 
-### Download source in github 
-{% highlight bash %}$ git clone  https://github.com/slippStudy/passion.git
+## Download source in github 
+
+{% highlight bash %}
+$ git clone  https://github.com/slippStudy/passion.git
 $ cd passion
-$ git status {% endhighlight %}
+$ git status 
+{% endhighlight %}
 
 
-### Install lombok 
-[lombok](http://projectlombok.org/)
+## Install lombok 
+[lombok](http://projectlombok.org/)[download]http://projectlombok.org/download.html()
 {% highlight bash %}$ java -jar lombok.jar {% endhighlight %}
 
-### Generate eclipse project
+## Generate eclipse project
 {% highlight bash %}$ mvn eclipse:clean eclipse:eclipse {% endhighlight %}
 
-### Import project 
+## Import project 
 
-### run project
+## run project
 
 
-### before push
+## before push
 {% highlight bash %}$ mvn test {% endhighlight %}
