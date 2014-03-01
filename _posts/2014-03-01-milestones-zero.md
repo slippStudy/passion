@@ -12,7 +12,9 @@ tags: ["개발환경"]
 ## require environment
 
 ## download source in github 
-{% highlight bash %} $ git clone  https://github.com/slippStudy/passion.git||$ cd passion||$ git status {% endhighlight %}
+{% highlight bash %} $ git clone  https://github.com/slippStudy/passion.git
+$ cd passion
+$ git status {% endhighlight %}
 
 
 ## install lombok 
