@@ -7,6 +7,16 @@ tags: ["개발환경"]
 ---
 {% include JB/setup %}
 
-https://github.com/slippStudy/passion/issues/22
+[#22](https://github.com/slippStudy/passion/issues/22)
 
+## require environment
 
+## download source in github 
+
+## install lombok 
+
+## generate eclipse project
+
+## import project 
+
+## run project
