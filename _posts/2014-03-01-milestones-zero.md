@@ -25,11 +25,16 @@ tags: [개발환경, lombok, eclipse, mvn]
 $ git clone  https://github.com/slippStudy/passion.git
 $ cd passion
 $ git status 
+
+# On branch master
+nothing to commit, working directory clean
+
+
 {% endhighlight %}
 
 
 ## Install lombok 
-[lombok](http://projectlombok.org/)[download]http://projectlombok.org/download.html()
+[lombok](http://projectlombok.org/)[download](http://projectlombok.org/download.html)
 {% highlight bash %}$ java -jar lombok.jar {% endhighlight %}
 
 ## Generate eclipse project
