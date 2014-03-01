@@ -12,21 +12,12 @@ tags: ["개발환경"]
 
 ### Requirements
 
-Installing Jekyll is easy and straight-forward, but there are a few requirements
-you’ll need to make sure your system has before you start.
+로컬 개발 환경을 설정하기 위해서는 아래와 같은 사항은 이미 설치되고 숙지 되어 있다라고 가정한다. 
 
-- [Ruby](http://www.ruby-lang.org/en/downloads/)
-- [RubyGems](http://rubygems.org/pages/download)
-- Linux, Unix, or Mac OS X
-
-<div class="note info">
-  <h5>Running Jekyll on Windows</h5>
-  <p>
-    While Windows is not officially supported, it is possible to get it running
-    on Windows. Special instructions can be found on our
-    <a href="../windows/#installation">Windows-specific docs page</a>.
-  </p>
-</div>
+- [jdk 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
+- [maven](http://maven.apache.org/download.cgi)
+- [tomcat 7](http://tomcat.apache.org/download-70.cgi)
+- [eclipse](https://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/keplersr2)
 
 ### Download source in github 
 {% highlight bash %}$ git clone  https://github.com/slippStudy/passion.git
@@ -35,6 +26,7 @@ $ git status {% endhighlight %}
 
 
 ### Install lombok 
+[lombok](http://projectlombok.org/)
 {% highlight bash %}$ java -jar lombok.jar {% endhighlight %}
 
 ### Generate eclipse project
