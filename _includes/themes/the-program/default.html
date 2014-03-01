@@ -20,7 +20,7 @@
 			<div class="unit-inner unit-head-inner">
 				<nav class="nav-global">
 					<ul>
-						<li class="logo"><a href="{{BASE_PATH}}">{{ site.title }}</a></li>
+						<li class="logo"><a href="{{BASE_PATH}}">{{ site.title }}{% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}</a></li>
 						{% assign pages_list = site.pages %}
             			{% assign group = 'navigation' %}
             			{% include JB/pages_list %}
