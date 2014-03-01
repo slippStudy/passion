@@ -1,6 +1,5 @@
 ---
 layout: page
-title: Sustainable Life, Programming, Programmer
 tagline: java study slipp
 ---
 {% include JB/setup %}
