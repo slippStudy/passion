@@ -37,7 +37,7 @@ nothing to commit, working directory clean
 [lombok](http://projectlombok.org/)[download](http://projectlombok.org/download.html)
 {% highlight bash %}$ java -jar lombok.jar {% endhighlight %}
 
-![lombok eclipse install]({{ BASEPATH }}/assets/images/_posts/lombok_install.png)
+![lombok eclipse install]({{ BASE_PATH }}/assets/images/_posts/lombok_install.png)
 
 ## Generate eclipse project
 {% highlight bash %}$ mvn eclipse:clean eclipse:eclipse {% endhighlight %}
