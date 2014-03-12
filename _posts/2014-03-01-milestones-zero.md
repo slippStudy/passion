@@ -7,19 +7,18 @@ tags: [개발환경, lombok, eclipse, mvn]
 ---
 {% include JB/setup %}
 
-- ### Issue 
-[#22](https://github.com/slippStudy/passion/issues/22)
-
 - ### Requirements
 
 로컬 개발 환경을 설정하기 위해서는 아래와 같은 사항은 이미 설치되고 숙지 되어 있다라고 가정한다. 
 
-- [jdk 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
-- [maven](http://maven.apache.org/download.cgi)
-- [tomcat 7](http://tomcat.apache.org/download-70.cgi)
-- [eclipse](https://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/keplersr2)
+-- [jdk 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
+-- [maven](http://maven.apache.org/download.cgi)
+-- [tomcat 7](http://tomcat.apache.org/download-70.cgi)
+-- [eclipse](https://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/keplersr2)
 
 - ## Download source in github 
+
+github 저장소에서 source 를 clone 받는다.
 
 {% highlight bash %}
 $ git clone  https://github.com/slippStudy/passion.git
@@ -33,9 +32,15 @@ nothing to commit, working directory clean
 
 - ## Install lombok 
 
-passion 은 [lombok](http://projectlombok.org/) 을 사용한다. lombok 에 대한 자세한 사항은 관련 사이트를 참고 바란다.
+passion 은 [lombok](http://projectlombok.org/) 을 사용한다. 
 
--- ### Download Lombok [여기서 다운로드](http://projectlombok.org/download.html)
+여기에서는 Eclipse 에서 lombok 을 활성화 시키기위한 방법만 살펴 본다. 
+
+lombok 에 대한 자세한 사항은 관련 사이트를 참고 바란다.
+
+- ### Download Lombok 
+
+[여기서 다운로드](http://projectlombok.org/download.html)
 
 다운로드 후 해당 폴더에서 jar 를 실행 시켜 IDE 에서 lombok 사용을 활성화 시켜준다. 
 {% highlight bash %}$ java -jar lombok.jar {% endhighlight %}
@@ -51,4 +56,9 @@ lombok 과 eclipse 가 잘 연결 되었다면 이 후 eclipse 로 web project �
 {% highlight bash %}$ mvn eclipse:clean eclipse:eclipse {% endhighlight %}
 
 - ## Import project 
+
+이제 Eclipse 에서 File > Import > Existing Projects into workspace 를 통해 dynamic web project 를 import 한다.
+
+<img src="{{ BASE_PATH }}/assets/import_project.png" width = "100%" alt="import_project" title="import_project">
+
 
