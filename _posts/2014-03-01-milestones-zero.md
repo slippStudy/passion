@@ -45,12 +45,10 @@ passion 은 [lombok](http://projectlombok.org/) 을 사용한다. lombok 에 대
 lombok 과 eclipse 가 잘 연결 되었다면 이 후 eclipse 로 web project 를 import 한 후 lombok관련 class 를 찾지 못해 발생하는 compile 오류를 보지 않을 것이다.
 
 - ## Generate eclipse project
+
+본 Project 를 Eclipse IDE 에서 Webproject 로 인식하도록 하기 위해서 maven 의 eclipse plugin 을 사용한 아래 명령을 입력한다.
+
 {% highlight bash %}$ mvn eclipse:clean eclipse:eclipse {% endhighlight %}
 
 - ## Import project 
 
-- ## run project
-
-
-- ## before push
-{% highlight bash %}$ mvn test {% endhighlight %}
