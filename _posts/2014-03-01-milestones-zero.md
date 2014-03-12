@@ -40,9 +40,9 @@ passion 은 [lombok](http://projectlombok.org/) 을 사용한다. lombok 에 대
 다운로드 후 해당 폴더에서 jar 를 실행 시켜 IDE 에서 lombok 사용을 활성화 시켜준다. 
 {% highlight bash %}$ java -jar lombok.jar {% endhighlight %}
 
-<img src="{{ site.url }}/assets/lombok_install.png" width = "100%" alt="lombok과 프로젝트의 연결 " title="lombok과 프로젝트의 연결 ">
+<img src="{{ BASE_PATH }}/assets/lombok_install.png" width = "100%" alt="{{HOME_PATH}}lombok과 프로젝트의 연결 " title="lombok과 프로젝트의 연결 ">
 
-lombok 과 eclipse 가 잘 연결 되었다면 이 후 eclipse 로 web project 를 import 한 후 lombok관련 class 각 찾지 못해 발생하는 compile 오류를 보지 않을 것이다.
+lombok 과 eclipse 가 잘 연결 되었다면 이 후 eclipse 로 web project 를 import 한 후 lombok관련 class 를 찾지 못해 발생하는 compile 오류를 보지 않을 것이다.
 
 - ## Generate eclipse project
 {% highlight bash %}$ mvn eclipse:clean eclipse:eclipse {% endhighlight %}
