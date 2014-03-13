@@ -8,3 +8,12 @@ Thumbs.db
 
 .rbenv-version
 .rvmrc
+
+target
+out
+build
+.settings
+.classpath
+.project
+.idea
+*.iml
