@@ -1,5 +1,9 @@
 # Created by http://www.gitignore.io
 
+### gh-pages branche 에서 생성되는 부산물들을 무시한다. 
+_site
+
+
 ### Eclipse ###
 *.pydevproject
 .metadata
