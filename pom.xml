@@ -83,7 +83,7 @@
         
         <dependency>
             <groupId>org.hsqldb</groupId>
-            <artifactId>org.hsqldb</artifactId>
+            <artifactId>hsqldb</artifactId>
             <version>2.3.2</version>
         </dependency>
 
