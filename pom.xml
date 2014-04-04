@@ -9,6 +9,8 @@
 
     <properties>
         <spring.version>3.2.0.RELEASE</spring.version>
+        <org.mybatis.version>3.2.6</org.mybatis.version>
+        <org.mybatis.spring.version>1.2.2</org.mybatis.spring.version>
     </properties>
 
     <dependencies>
@@ -92,6 +94,24 @@
             <artifactId>hsqldb</artifactId>
             <version>2.3.2</version>
         </dependency>
+        
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>${org.mybatis.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>${org.mybatis.spring.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
 
     </dependencies>
 
@@ -99,14 +119,14 @@
         <finalName>passion</finalName>
         <plugins>
             <plugin>
-			    <groupId>org.apache.maven.plugins</groupId>
-			    <artifactId>maven-compiler-plugin</artifactId>
-			    <version>3.0</version>
-			    <configuration>
-			        <source>1.7</source>
-			        <target>1.7</target>
-			        <encoding>UTF-8</encoding>
-			    </configuration>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.0</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
             </plugin>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
