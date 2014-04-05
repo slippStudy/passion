@@ -1,47 +1,65 @@
 package org.slipp.passion.imsi;
 
-import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+import static org.slipp.passion.imsi.UserRoleSwitchController.ADMIN;
+import static org.slipp.passion.imsi.UserRoleSwitchController.GENERAL;
+import static org.slipp.passion.imsi.UserRoleSwitchController.USER_ROLE;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
-import static org.slipp.passion.imsi.UserRoleSwitchController.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
+import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
+import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
 
 import java.util.UUID;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.MockitoAnnotations;
+import org.slipp.passion.TestContextConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mock.web.MockHttpSession;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.context.WebApplicationContext;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-@ContextConfiguration(locations={"file:src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml","classpath:/testContext.xml"})
+@ContextConfiguration(classes={TestContextConfig.class})
 public class UserRoleSwitchControllerTest {
     private MockMvc mockMvc;
 
     @Autowired
     protected WebApplicationContext wac;
 
+    @Autowired SessionedUserRoleSetter sessionedUserRoleSetter;
+
     protected MockHttpSession mockSession;
 
     
     @Before
     public void setup() {
-        this.mockMvc = webAppContextSetup(this.wac).build();
+        MockitoAnnotations.initMocks(this);
+
+        UserRoleSwitchController dut = new UserRoleSwitchController();
+        ReflectionTestUtils.setField(dut,"sessionedUserRoleSetter",sessionedUserRoleSetter);
+        this.mockMvc = standaloneSetup(dut).build();
         mockSession = new MockHttpSession(wac.getServletContext(), UUID.randomUUID().toString());
     }
     
     @Test
-    public void goRoleStatePage() throws Exception{
+    public void 롤변경페이지이동() throws Exception{
+        when(sessionedUserRoleSetter.get()).thenReturn(GENERAL);
+
 		mockMvc.perform(get("/imsi/role/state"))
 		.andExpect(view().name("imsi/role/state"))
 		.andExpect(model().attribute(USER_ROLE, GENERAL));
@@ -49,30 +67,28 @@ public class UserRoleSwitchControllerTest {
     
     @Test
     public void 세션에관리자로설정() throws Exception{
-		mockMvc.perform(post("/imsi/role/state").param("role", ADMIN).session(mockSession))
-		.andExpect(request().sessionAttribute(USER_ROLE, ADMIN))
+		mockMvc.perform(post("/imsi/role/state").param("role", ADMIN))
 		.andExpect(redirectedUrl("/imsi/role/state"));
 		
-
-		mockMvc.perform(get("/imsi/role/state").session(mockSession))
-		.andExpect(model().attribute(USER_ROLE, ADMIN));
+        verify(sessionedUserRoleSetter).setAdmin();
     }
-    
+
     @Test
     public void 세션에일반사용자로설정() throws Exception{
-		mockMvc.perform(post("/imsi/role/state").param("role", GENERAL).session(mockSession))
-		.andExpect(request().sessionAttribute(USER_ROLE, GENERAL))
-		.andExpect(redirectedUrl("/imsi/role/state"));
-		
-		mockMvc.perform(get("/imsi/role/state").session(mockSession))
-		.andExpect(model().attribute(USER_ROLE, GENERAL));
+        mockMvc.perform(post("/imsi/role/state").param("role", GENERAL))
+                .andExpect(redirectedUrl("/imsi/role/state"));
+
+        System.out.println("1..ZXC "+sessionedUserRoleSetter.hashCode());
+        verify(sessionedUserRoleSetter).setGeneral();
     }
-    
+
     @Test
     public void 세션에일반사용자로설정_파람안넘겼을() throws Exception{
-		mockMvc.perform(post("/imsi/role/state").session(mockSession))
-		.andExpect(request().sessionAttribute(USER_ROLE, GENERAL))
-		.andExpect(redirectedUrl("/imsi/role/state"));
+        mockMvc.perform(post("/imsi/role/state"))
+                .andExpect(redirectedUrl("/imsi/role/state"));
+
+        //System.out.println("2..ZXC "+sessionedUserRoleSetter.hashCode());
+        //verify(sessionedUserRoleSetter).setGeneral();
     }
     
     

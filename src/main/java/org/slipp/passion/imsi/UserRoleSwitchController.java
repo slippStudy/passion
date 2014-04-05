@@ -1,7 +1,6 @@
 package org.slipp.passion.imsi;
 
-import javax.servlet.http.HttpSession;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,30 +15,24 @@ public class UserRoleSwitchController {
 	static final String ADMIN = "ADMIN";
 	static final String USER_ROLE = "USER_ROLE";
 
-	  
+    @Autowired
+    SessionedUserRoleSetter sessionedUserRoleSetter;
 	
 	@RequestMapping(value="/imsi/role/state",method=RequestMethod.GET)
-	public String statePage(HttpSession session, Model model){
-		; 
-		model.addAttribute(USER_ROLE, getUserRoleAccessor(session).get());
+	public String statePage(Model model){
+        model.addAttribute(USER_ROLE, sessionedUserRoleSetter.get());
 		return "imsi/role/state";
 	}
 
-
-	private SessionedUserRoleAccessor getUserRoleAccessor(HttpSession session) {
-		return new SessionedUserRoleAccessor(session);
-	}
-
-	
-	@RequestMapping(value="/imsi/role/state",method=RequestMethod.POST)
-	public String setRoleState(@RequestParam(defaultValue=GENERAL) String role, HttpSession session){
-		switch(role){
+    @RequestMapping(value="/imsi/role/state",method=RequestMethod.POST)
+	public String setRoleState(@RequestParam(defaultValue=GENERAL) String role){
+        switch(role){
 		case ADMIN:
-			getUserRoleAccessor(session).setAdmin();
+            sessionedUserRoleSetter.setAdmin();
 			break;
 		case GENERAL:
 		default:
-			getUserRoleAccessor(session).setGeneral();
+            sessionedUserRoleSetter.setGeneral();
 			
 		}
 		return "redirect:/imsi/role/state";

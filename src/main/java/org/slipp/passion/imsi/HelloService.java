@@ -1,4 +1,4 @@
-package com.springapp.mvc;
+package org.slipp.passion.imsi;
 
 public class HelloService {
     public String greetingMessage(String name) {

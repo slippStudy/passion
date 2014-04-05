@@ -6,5 +6,5 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 
-    <bean class="com.springapp.mvc.HelloService"></bean>
+    <bean class="org.slipp.passion.imsi.SessionedUserRoleAccessor"></bean>
 </beans>

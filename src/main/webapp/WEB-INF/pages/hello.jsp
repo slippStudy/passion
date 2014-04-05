@@ -12,8 +12,10 @@
 	<dl>
 	  <dt>  현재 세션에 대한 롤 파악 및 변경 </dt>  
 	  <dd>  <a href="${pageContext.request.contextPath}/imsi/role/state">롤 변경 </a></dd>
-	  <dd>  <a href="${pageContext.request.contextPath}/imsi/sign/sign">로그인 페이지로 이동 </a></dd>
-	</dl>
+      <dt>  Admin </dt>
+      <dd>  <a href="${pageContext.request.contextPath}/admin">관리자페이지 이동 </a></dd>        
+      <dd>  <a href="${pageContext.request.contextPath}/imsi/sign/sign">로그인 페이지로 이동 </a></dd>	
+    </dl>
 
 </body>
 </html>

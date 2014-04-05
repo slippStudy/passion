@@ -23,12 +23,14 @@ public class SessionedUserRoleAccessorTest {
 	@Test
 	public void 초기롤은_일반이다(){
 		assertThat(dut.get(), is("GENERAL"));
+		assertThat(dut.isAdmin(), is(false));
 	}
 	
 	@Test
 	public void 관리자설정및_확인(){
 		dut.setAdmin();
 		assertThat(dut.get(), is("ADMIN"));
+		assertThat(dut.isAdmin(), is(true));
 	}
 	
 	@Test

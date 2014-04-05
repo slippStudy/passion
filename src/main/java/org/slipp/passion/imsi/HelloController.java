@@ -1,4 +1,4 @@
-package com.springapp.mvc;
+package org.slipp.passion.imsi;
 
 import lombok.extern.slf4j.Slf4j;
 
