@@ -14,17 +14,6 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
         <property name="configLocation" value="classpath:config/mapper/mybatis-config-base.xml" />
- 
-        <property name="mapperLocations">
-            <list>
-                <value>classpath*:org/slipp/passion/imsi/**/dao/*Mapper.xml</value>
-            </list>
-        </property>
-    </bean>
- 
-    <!-- scan for mappers and let them be autowired -->
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="org.slipp.passion.imsi" />
     </bean>
 
 
