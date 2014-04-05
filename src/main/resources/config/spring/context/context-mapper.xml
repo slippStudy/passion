@@ -26,4 +26,11 @@
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="org.slipp.passion.imsi" />
     </bean>
+
+
+    <bean id="userSignMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="org.slipp.passion.imsi.sign.mapper.UserSignMapper" />
+        <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+    </bean>
+
 </beans>

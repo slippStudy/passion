@@ -14,7 +14,5 @@
         <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
-    
-    <bean class="com.springapp.mvc.HelloService"></bean>
 
 </beans>

@@ -7,11 +7,15 @@ import org.slipp.passion.imsi.sign.vo.UserSignVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
 public class UserSignService {
-    @Autowired
+
     private UserSignMapper userSignMapper;
-   
+
+    public void setUserSignMapper(UserSignMapper userSignMapper) {
+        this.userSignMapper = userSignMapper;
+    }
+
+
     public ArrayList<UserSignVo> getList() {
         return this.userSignMapper.getList();
     }
