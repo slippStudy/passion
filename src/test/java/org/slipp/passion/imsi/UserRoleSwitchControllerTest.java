@@ -34,6 +34,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
+@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 @ContextConfiguration(classes={TestContextConfig.class})
 public class UserRoleSwitchControllerTest {
     private MockMvc mockMvc;
@@ -48,11 +49,7 @@ public class UserRoleSwitchControllerTest {
     
     @Before
     public void setup() {
-        MockitoAnnotations.initMocks(this);
-
-        UserRoleSwitchController dut = new UserRoleSwitchController();
-        ReflectionTestUtils.setField(dut,"sessionedUserRoleSetter",sessionedUserRoleSetter);
-        this.mockMvc = standaloneSetup(dut).build();
+        this.mockMvc = webAppContextSetup(wac).build();
         mockSession = new MockHttpSession(wac.getServletContext(), UUID.randomUUID().toString());
     }
     
@@ -78,7 +75,6 @@ public class UserRoleSwitchControllerTest {
         mockMvc.perform(post("/imsi/role/state").param("role", GENERAL))
                 .andExpect(redirectedUrl("/imsi/role/state"));
 
-        System.out.println("1..ZXC "+sessionedUserRoleSetter.hashCode());
         verify(sessionedUserRoleSetter).setGeneral();
     }
 
@@ -87,8 +83,7 @@ public class UserRoleSwitchControllerTest {
         mockMvc.perform(post("/imsi/role/state"))
                 .andExpect(redirectedUrl("/imsi/role/state"));
 
-        //System.out.println("2..ZXC "+sessionedUserRoleSetter.hashCode());
-        //verify(sessionedUserRoleSetter).setGeneral();
+        verify(sessionedUserRoleSetter).setGeneral();
     }
     
     

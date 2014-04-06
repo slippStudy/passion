@@ -13,7 +13,7 @@
             <pattern>[%-5p %d{yy-MM-dd HH:mm:ss}] %logger{15} |#||:%m%n</pattern>
         </encoder>
     </appender>
-    <root level="DEBUG">
+    <root level="INFO">
         <appender-ref ref="A1"/>
     </root>
 </configuration>
