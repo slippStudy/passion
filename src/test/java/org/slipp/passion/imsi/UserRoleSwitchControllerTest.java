@@ -5,6 +5,7 @@ import static org.mockito.Mockito.when;
 import static org.slipp.passion.imsi.UserRoleSwitchController.ADMIN;
 import static org.slipp.passion.imsi.UserRoleSwitchController.GENERAL;
 import static org.slipp.passion.imsi.UserRoleSwitchController.USER_ROLE;
+import static org.springframework.test.annotation.DirtiesContext.ClassMode.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
@@ -34,7 +35,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
+@DirtiesContext(classMode = AFTER_EACH_TEST_METHOD)
 @ContextConfiguration(classes={TestContextConfig.class})
 public class UserRoleSwitchControllerTest {
     private MockMvc mockMvc;
