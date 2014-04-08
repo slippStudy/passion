@@ -1,7 +1,7 @@
 package org.slipp.passion.join;
 
-import static org.slipp.passion.join.SingupCheckController.CheckedMassage.fail;
-import static org.slipp.passion.join.SingupCheckController.CheckedMassage.success;
+import static org.slipp.passion.join.SignUpCheckController.CheckedMassage.fail;
+import static org.slipp.passion.join.SignUpCheckController.CheckedMassage.success;
 import static org.springframework.http.HttpStatus.FORBIDDEN;
 
 import javax.servlet.http.HttpServletResponse;
@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class SingupCheckController {
+public class SignUpCheckController {
 
     @Autowired
-    SignupChecker signupChecker;
+    SignUpChecker signupChecker;
 
     @RequestMapping(value="/signup_check/username",method= RequestMethod.POST,produces = "application/json")
     @ResponseBody

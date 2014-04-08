@@ -6,7 +6,7 @@ import org.slipp.passion.imsi.HelloService;
 import org.slipp.passion.imsi.SessionedUserRoleSetter;
 import org.slipp.passion.imsi.UserRoleAccessor;
 import org.slipp.passion.imsi.sign.service.UserSignService;
-import org.slipp.passion.join.SignupChecker;
+import org.slipp.passion.join.SignUpChecker;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
@@ -39,8 +39,8 @@ public class TestContextConfig{
 
 
     @Bean
-    public SignupChecker signUpChecker(){
-        return mock(SignupChecker.class);
+    public SignUpChecker signUpChecker(){
+        return mock(SignUpChecker.class);
     }
 
 

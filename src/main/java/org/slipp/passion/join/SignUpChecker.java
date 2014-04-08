@@ -1,6 +1,6 @@
 package org.slipp.passion.join;
 
-public class SignupChecker {
+public class SignUpChecker {
     public boolean isDuplicatedUsername(String username) {
         return false;  //To change body of created methods use File | Settings | File Templates.
     }

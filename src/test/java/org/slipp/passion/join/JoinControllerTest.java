@@ -25,7 +25,7 @@ public class JoinControllerTest {
     protected WebApplicationContext wac;
 
     @Autowired
-    SignupChecker signupChecker;
+    SignUpChecker signupChecker;
 
     @Before
     public void setup() {

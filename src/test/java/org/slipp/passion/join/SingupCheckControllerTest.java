@@ -28,7 +28,7 @@ public class SingupCheckControllerTest {
     protected WebApplicationContext wac;
 
     @Autowired
-    SignupChecker signupChecker;
+    SignUpChecker signupChecker;
 
     @Before
     public void setup() {
