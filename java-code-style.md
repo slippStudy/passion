@@ -1,6 +1,5 @@
-= Java Code Style
+# Java Code Style
 
-[^2014.03.03]
 # 파일 이름
 ##	파일 확장자
 ### .java 파일
